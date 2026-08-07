@@ -3,12 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matin Ebrahimkhani | AI Researcher & Ph.D. Applicant</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Matin Ebrahimkhani | AI Researcher</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
@@ -24,272 +21,284 @@
     </script>
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .glass-nav { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); }
+        .glass-nav { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-primary-100 selection:text-primary-900">
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-primary-200 selection:text-primary-900">
 
-    <!-- Navigation Bar -->
-    <nav class="glass-nav fixed w-full z-50 top-0 border-b border-slate-200/80 transition-all">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <a href="#" class="font-bold text-lg text-slate-900 tracking-tight">Matin Ebrahimkhani</a>
-            <div class="hidden md:flex space-x-6 text-sm font-medium text-slate-600">
-                <a href="#about" class="hover:text-primary-600 transition">About</a>
-                <a href="#research" class="hover:text-primary-600 transition">Research</a>
-                <a href="#publications" class="hover:text-primary-600 transition">Publications</a>
-                <a href="#experience" class="hover:text-primary-600 transition">Experience</a>
-                <a href="#education" class="hover:text-primary-600 transition">Education</a>
-                <a href="#gallery" class="hover:text-primary-600 transition">Gallery</a>
-            </div>
-            <div class="flex items-center space-x-4">
-                <a href="https://github.com/MatinEbrahimkhani" target="_blank" class="text-slate-600 hover:text-primary-600 transition text-lg"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/matin-ebrahimkhani-ba1b91185/" target="_blank" class="text-slate-600 hover:text-primary-600 transition text-lg"><i class="fa-brands fa-linkedin"></i></a>
+    <nav class="glass-nav fixed w-full z-50 top-0 border-b border-slate-200 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#" class="font-bold text-xl text-primary-900 tracking-tight">M. Ebrahimkhani</a>
+                <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                    <a href="#about" class="hover:text-primary-600 transition">About</a>
+                    <a href="#research" class="hover:text-primary-600 transition">Research</a>
+                    <a href="#publications" class="hover:text-primary-600 transition">Publications</a>
+                    <a href="#experience" class="hover:text-primary-600 transition">Experience</a>
+                    <a href="#skills" class="hover:text-primary-600 transition">Skills</a>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="https://github.com/MatinEbrahimkhani" target="_blank" class="text-slate-500 hover:text-primary-600 transition text-lg"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/matin-ebrahimkhani-ba1b91185/" target="_blank" class="text-slate-500 hover:text-primary-600 transition text-lg"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero / Banner Section -->
-    <section id="about" class="pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-        <div class="bg-gradient-to-br from-primary-900 to-primary-700 rounded-3xl p-8 sm:p-12 text-white shadow-xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-10">
-            <!-- Background glow decoration -->
-            <div class="absolute -right-20 -top-20 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
+    <section id="about" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12">
+        <div class="flex-1 space-y-6 text-center md:text-left">
+            <div class="inline-block px-4 py-1.5 rounded-full bg-primary-50 text-primary-700 text-sm font-semibold tracking-wide border border-primary-100">
+                Ph.D. Applicant & AI Researcher
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                Matin Ebrahimkhani
+            </h1>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto md:mx-0 leading-relaxed">
+                Specializing in Natural Language Processing, Large Language Models, Multimodal AI, and Scalable MLOps. Passionate about bridging theoretical AI research with robust, real-world deployment.
+            </p>
             
-            <div class="space-y-6 z-10 text-center md:text-left">
-                <span class="inline-block bg-white/20 text-primary-100 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Ph.D. Applicant & AI Researcher</span>
-                <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">Matin Ebrahimkhani</h1>
-                <p class="text-primary-100 text-base sm:text-lg max-w-xl leading-relaxed">
-                    Specializing in Natural Language Processing, Large Language Models, MLOps, and Scalable AI Systems. Bridging deep theoretical research with robust, real-world deployment.
-                </p>
-                <div class="flex flex-wrap justify-center md:justify-start gap-4 pt-2 text-sm text-slate-200">
-                    <span><i class="fa-solid fa-location-dot mr-1.5 text-primary-300"></i> Zanjan, Iran</span>
-                    <a href="mailto:mat.ebrahimkhani@gmail.com" class="hover:text-white transition"><i class="fa-solid fa-envelope mr-1.5 text-primary-300"></i> mat.ebrahimkhani@gmail.com</a>
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-4">
+                <a href="mailto:mat.ebrahimkhani@gmail.com" class="flex items-center gap-2 px-5 py-2.5 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition font-medium shadow-sm">
+                    <i class="fa-solid fa-envelope"></i> Get in touch
+                </a>
+                <a href="https://matinebrahimkhani.github.io" class="flex items-center gap-2 px-5 py-2.5 bg-white text-slate-700 border border-slate-300 rounded-lg hover:bg-slate-50 transition font-medium shadow-sm">
+                    <i class="fa-solid fa-download"></i> Download CV
+                </a>
+            </div>
+        </div>
+        
+        <div class="w-64 h-64 md:w-80 md:h-80 shrink-0 relative group">
+            <div class="absolute inset-0 bg-primary-200 rounded-full blur-2xl opacity-50 group-hover:opacity-75 transition duration-500"></div>
+            <img src="https://ui-avatars.com/api/?name=Matin+Ebrahimkhani&background=0ea5e9&color=fff&size=512" alt="Matin Ebrahimkhani" class="relative w-full h-full object-cover rounded-full border-4 border-white shadow-xl">
+        </div>
+    </section>
+
+    <section id="research" class="py-16 bg-white border-y border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2"><i class="fa-solid fa-microscope text-primary-600"></i> Research Interests</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-md transition">
+                    <i class="fa-solid fa-language text-2xl text-primary-500 mb-4"></i>
+                    <h3 class="font-bold text-slate-800 mb-2">NLP</h3>
+                    <p class="text-sm text-slate-600">Large language models, language understanding and generation, text correction, sequence labeling, multilingual NLP.</p>
                 </div>
-                <div class="pt-2 flex flex-wrap gap-3 justify-center md:justify-start">
-                    <a href="https://matinebrahimkhani.com" target="_blank" class="px-5 py-2.5 bg-white text-primary-900 rounded-xl font-semibold hover:bg-primary-50 transition shadow-sm text-sm flex items-center gap-2"><i class="fa-solid fa-globe"></i> Visit Website</a>
-                    <a href="https://github.com/MatinEbrahimkhani" target="_blank" class="px-5 py-2.5 bg-primary-800/80 text-white border border-white/20 rounded-xl font-semibold hover:bg-primary-800 transition text-sm flex items-center gap-2"><i class="fa-brands fa-github"></i> GitHub Profile</a>
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-md transition">
+                    <i class="fa-solid fa-photo-film text-2xl text-primary-500 mb-4"></i>
+                    <h3 class="font-bold text-slate-800 mb-2">Speech & Multimodal</h3>
+                    <p class="text-sm text-slate-600">Automatic speech recognition, text-to-speech systems, neural voice generation, language-speech integration, and multimodal learning.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-md transition">
+                    <i class="fa-solid fa-shield-halved text-2xl text-primary-500 mb-4"></i>
+                    <h3 class="font-bold text-slate-800 mb-2">Efficient AI</h3>
+                    <p class="text-sm text-slate-600">Model adaptation and fine-tuning, efficient training and inference, evaluation of AI systems, and robust machine learning.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-md transition">
+                    <i class="fa-solid fa-server text-2xl text-primary-500 mb-4"></i>
+                    <h3 class="font-bold text-slate-800 mb-2">Applied ML Systems</h3>
+                    <p class="text-sm text-slate-600">Scalable AI pipelines, real-world deployment of machine learning models, and reproducible AI research.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="publications" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-slate-900 mb-10 flex items-center gap-3">
+            <i class="fa-solid fa-book-open text-primary-600"></i> Publications & Research
+        </h2>
+        
+        <div class="space-y-8">
+            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition duration-300">
+                <div class="flex flex-col lg:flex-row gap-6 justify-between items-start">
+                    <div class="space-y-4">
+                        <span class="text-sm font-semibold text-primary-600">RANLP 2025</span>
+                        <h3 class="text-xl font-bold text-slate-900 leading-tight">PerSpaCor: Correcting Space and ZWNJ Errors in Persian Text with Transformer Models</h3>
+                        <p class="text-slate-500 text-sm"><strong>Matin Ebrahimkhani</strong>, Ebrahim Ansari</p>
+                        
+                        <ul class="text-slate-600 text-sm space-y-2 mt-4 list-disc list-inside">
+                            <li><strong>Novel Research:</strong> Engineered and evaluated four original transformer-based classifier architectures—ReLU-Norm, DualStep DropNet, and SimplexNet—achieving a State-of-the-Art macro F1-score of 97.26%.</li>
+                            <li><strong>Dataset Leadership:</strong> Independently curated, preprocessed, and manually annotated a massive dataset of over 12.7 million words.</li>
+                            <li><strong>Open Source Impact:</strong> Released all state of the art models, code, and the annotated corpus to the research community and deployed a public web-based correction system.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="flex flex-col gap-3 shrink-0 w-full lg:w-auto">
+                        <a href="https://aclanthology.org/2025.ranlp-1.40/" target="_blank" class="flex items-center justify-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-sm font-medium transition">
+                            <i class="fa-solid fa-file-pdf text-red-500"></i> ACL Anthology
+                        </a>
+                        <a href="https://huggingface.co/PerSpaCor" target="_blank" class="flex items-center justify-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-sm font-medium transition">
+                            <i class="fa-solid fa-face-smiling-hands text-yellow-500"></i> Hugging Face
+                        </a>
+                        <a href="https://github.com/MatinEbrahimkhani/PerSpaCor_components" target="_blank" class="flex items-center justify-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-sm font-medium transition">
+                            <i class="fa-brands fa-github"></i> GitHub Repo
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Profile Picture Placeholder -->
-            <div class="shrink-0 z-10">
-                <div class="w-48 h-48 sm:w-56 sm:h-56 rounded-2xl bg-slate-200/20 backdrop-blur-md border-4 border-white/30 shadow-2xl overflow-hidden flex items-center justify-center text-primary-100 font-medium text-center p-4">
-                    <!-- Replace with: <img src="assets/profile.jpg" alt="Matin Ebrahimkhani" class="w-full h-full object-cover"> -->
-                    <div>
-                        <i class="fa-solid fa-user-graduate text-3xl mb-2"></i>
-                        <p class="text-xs">Profile Picture Placeholder</p>
+            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition duration-300">
+                <div class="space-y-4">
+                    <span class="text-sm font-semibold text-amber-600 bg-amber-50 px-3 py-1 rounded-full border border-amber-100">In Progress</span>
+                    <h3 class="text-xl font-bold text-slate-900 leading-tight">Efficient Adaptation of Foundation Models: A Comparative Study of Parameter-Efficient Fine-Tuning Methods for Domain-Specific Tasks</h3>
+                    <p class="text-slate-500 text-sm"><strong>Matin Ebrahimkhani</strong>, Mina Sirinchi, Mo Nasher, Mobin Ebrahimkhani</p>
+                    <p class="text-slate-600 text-sm leading-relaxed mt-4">
+                        Investigating parameter-efficient fine-tuning techniques (LoRA, QLoRA, Adapters, Prefix Tuning, and full fine-tuning) across multiple NLP tasks. The study evaluates accuracy/F1, BLEU/ROUGE, and resource metrics (training time/GPU memory, inference latency, and number of trained parameters) to compare performance–efficiency trade-offs. Planned code and scripts will be released for reproducibility.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-100 border-y border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16">
+            
+            <div id="experience">
+                <h2 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+                    <i class="fa-solid fa-briefcase text-primary-600"></i> Experience
+                </h2>
+                <div class="space-y-8 relative before:absolute before:inset-0 before:ml-2 md:before:ml-0 md:before:translate-x-0 before:h-full before:w-0.5 before:bg-slate-300">
+                    
+                    <div class="relative flex items-center group">
+                        <div class="absolute left-[-5px] w-3 h-3 rounded-full border-2 border-primary-600 bg-white ring-4 ring-slate-100"></div>
+                        <div class="ml-6 bg-white p-5 rounded-2xl shadow-sm border border-slate-200 w-full">
+                            <h3 class="font-bold text-slate-900 text-base">AI Researcher and Developer</h3>
+                            <p class="text-primary-600 font-medium text-sm mb-3">REEICO <span class="text-slate-400 font-normal">| Sep 2024 – Apr 2025</span></p>
+                            <p class="text-slate-600 text-sm leading-relaxed">Designed and developed an end-to-end AI-powered dubbing system. The pipeline integrated automatic speech recognition (ASR), neural machine translation (NMT), text-to-speech synthesis (TTS), and speaker-aware voice cloning. Independently handled the MLOps infrastructure.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative flex items-center group">
+                        <div class="absolute left-[-5px] w-3 h-3 rounded-full border-2 border-slate-400 bg-white ring-4 ring-slate-100"></div>
+                        <div class="ml-6 bg-white p-5 rounded-2xl shadow-sm border border-slate-200 w-full">
+                            <h3 class="font-bold text-slate-900 text-base">Freelance Developer and Researcher</h3>
+                            <p class="text-primary-600 font-medium text-sm mb-3">Independent <span class="text-slate-400 font-normal">| Jul 2021 – Sep 2024</span></p>
+                            <p class="text-slate-600 text-sm leading-relaxed">Designed and implemented web-based services and AI-driven applications. Conducted independent research on reinforcement learning and algorithmic trading for the Forex market.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative flex items-center group">
+                        <div class="absolute left-[-5px] w-3 h-3 rounded-full border-2 border-slate-400 bg-white ring-4 ring-slate-100"></div>
+                        <div class="ml-6 bg-white p-5 rounded-2xl shadow-sm border border-slate-200 w-full">
+                            <h3 class="font-bold text-slate-900 text-base">Software Engineer and Data Analyst</h3>
+                            <p class="text-primary-600 font-medium text-sm mb-3">SAFA Corp. <span class="text-slate-400 font-normal">| Apr 2020 – Jul 2021</span></p>
+                            <p class="text-slate-600 text-sm leading-relaxed">Developed semi-automated and fully-automated robots for the Forex market. Performed statistical analysis and implemented machine learning algorithms.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative flex items-center group">
+                        <div class="absolute left-[-5px] w-3 h-3 rounded-full border-2 border-slate-400 bg-white ring-4 ring-slate-100"></div>
+                        <div class="ml-6 bg-white p-5 rounded-2xl shadow-sm border border-slate-200 w-full">
+                            <h3 class="font-bold text-slate-900 text-base">Programmer & Technical Lead</h3>
+                            <p class="text-primary-600 font-medium text-sm mb-3">Naghil Noghoul <span class="text-slate-400 font-normal">| Dec 2018 – Oct 2019</span></p>
+                            <p class="text-slate-600 text-sm leading-relaxed">Led the technical development of Naghil Noghoul, an interactive storytelling game-app for children aged 3–12 built with C# and the Unity engine.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div>
+                <div id="education" class="mb-12">
+                    <h2 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+                        <i class="fa-solid fa-graduation-cap text-primary-600"></i> Education
+                    </h2>
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 border-l-4 border-l-primary-500">
+                            <div class="flex justify-between items-start mb-2">
+                                <div>
+                                    <h3 class="font-bold text-slate-900">M.Sc. in Computer Engineering (AI & Robotics)</h3>
+                                    <p class="text-slate-600 text-sm">IASBS, Zanjan, Iran</p>
+                                </div>
+                                <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">2020 – 2024</span>
+                            </div>
+                            <ul class="text-sm text-slate-600 mt-3 space-y-1">
+                                <li><strong class="text-slate-800">GPA:</strong> 3.11/4 (15.54/20)</li>
+                                <li><strong class="text-slate-800">Thesis:</strong> Correction of Space and ZWNJ in Persian Text, Using Sequence Labeling with Pre-trained Large Language Models</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 border-l-4 border-l-slate-400">
+                            <div class="flex justify-between items-start mb-2">
+                                <div>
+                                    <h3 class="font-bold text-slate-900">B.Sc. in Information Technology Engineering</h3>
+                                    <p class="text-slate-600 text-sm">IASBS, Zanjan, Iran</p>
+                                </div>
+                                <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">2016 – 2020</span>
+                            </div>
+                            <ul class="text-sm text-slate-600 mt-3 space-y-1">
+                                <li><strong class="text-slate-800">Thesis:</strong> Semi-Automated Forex Assistant</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Main Content Container -->
-    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
-
-        <!-- Research Interests -->
-        <section id="research" class="bg-white p-8 rounded-3xl shadow-xs border border-slate-200/80">
-            <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3"><i class="fa-solid fa-brain text-primary-600"></i> Research Interests</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
-                <div class="p-5 rounded-2xl bg-slate-50 border border-slate-100 hover:border-primary-200 transition">
-                    <h3 class="font-bold text-slate-900 mb-2 text-base">Natural Language Processing</h3>
-                    <p class="text-slate-600 leading-relaxed">Large Language Models, Text Correction, Multilingual Translation, Text-to-Speech Systems, and Sequence-to-Sequence Models.</p>
-                </div>
-                <div class="p-5 rounded-2xl bg-slate-50 border border-slate-100 hover:border-primary-200 transition">
-                    <h3 class="font-bold text-slate-900 mb-2 text-base">AI Applications & Multimodal Systems</h3>
-                    <p class="text-slate-600 leading-relaxed">Automated Video Dubbing Pipelines, Real-Time Language Understanding, Automatic Speech Recognition, and Multimodal Learning.</p>
-                </div>
-                <div class="p-5 rounded-2xl bg-slate-50 border border-slate-100 hover:border-primary-200 transition">
-                    <h3 class="font-bold text-slate-900 mb-2 text-base">Machine Learning Systems</h3>
-                    <p class="text-slate-600 leading-relaxed">Real-Time Inference, Efficient Training on Streaming Data, and Evaluation & Optimization in Practical Contexts.</p>
-                </div>
-                <div class="p-5 rounded-2xl bg-slate-50 border border-slate-100 hover:border-primary-200 transition">
-                    <h3 class="font-bold text-slate-900 mb-2 text-base">Scalable & Reproducible AI</h3>
-                    <p class="text-slate-600 leading-relaxed">MLOps, Experimental Reproducibility, and Scalable Training Pipelines designed for rigorous AI research.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Publications Section -->
-        <section id="publications" class="bg-white p-8 rounded-3xl shadow-xs border border-slate-200/80">
-            <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3"><i class="fa-solid fa-book-open text-primary-600"></i> Publications</h2>
-            <div class="p-6 rounded-2xl bg-primary-50/50 border border-primary-100 space-y-4">
-                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
-                    <span class="text-xs font-semibold bg-primary-200/60 text-primary-800 px-3 py-1 rounded-full uppercase tracking-wider">RANLP 2025</span>
-                    <span class="text-xs text-slate-500 font-medium">Published Conference Proceeding</span>
-                </div>
-                <h3 class="text-xl font-bold text-slate-900">PerSpaCor: Correcting Space and ZWNJ Errors in Persian Text with Transformer Models</h3>
-                <p class="text-sm text-slate-600"><strong>Matin Ebrahimkhani</strong>, Ebrahim Ansari — <em>Proceedings of the 15th International Conference on Recent Advances in Natural Language Processing (RANLP 2025)</em></p>
-                <ul class="text-sm text-slate-700 space-y-2 list-disc list-inside pt-1">
-                    <li><strong>Novel Research:</strong> Engineered and evaluated four original transformer-based classifier architectures—ReLU-Norm, DualStep DropNet, and SimplexNet—achieving a State-of-the-Art macro F1-score of 97.26%.</li>
-                    <li><strong>Dataset Leadership:</strong> Curated, preprocessed, and manually annotated a massive benchmark dataset of over 12.7 million words.</li>
-                    <li><strong>Open Source Impact:</strong> Released all SOTA models, code, and annotated corpus, alongside a public web-based correction system.</li>
+    <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <h2 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+            <i class="fa-solid fa-code text-primary-600"></i> Technical Expertise
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4 border-b pb-2">Languages</h3>
+                <ul class="space-y-2 text-sm text-slate-700">
+                    <li><strong>Python</strong> <span class="text-slate-400">— Expert</span></li>
+                    <li><strong>C/C++</strong> <span class="text-slate-400">— Advanced</span></li>
+                    <li><strong>Bash</strong> <span class="text-slate-400">— Proficient</span></li>
+                    <li><strong>HTML/CSS</strong> <span class="text-slate-400">— Advanced</span></li>
+                    <li><strong>JavaScript</strong> <span class="text-slate-400">— Familiar</span></li>
+                    <li><strong>SQL</strong> <span class="text-slate-400">— Familiar</span></li>
+                    <li><strong>C#</strong> <span class="text-slate-400">— Familiar</span></li>
                 </ul>
-                <div class="flex flex-wrap gap-3 pt-3">
-                    <a href="https://aclanthology.org/2025.ranlp-1.40/" target="_blank" class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white text-primary-700 border border-primary-200 rounded-xl text-xs font-semibold hover:bg-primary-50 transition shadow-2xs"><i class="fa-solid fa-file-pdf"></i> ACL Anthology</a>
-                    <a href="https://huggingface.co/PerSpaCor" target="_blank" class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white text-amber-700 border border-amber-200 rounded-xl text-xs font-semibold hover:bg-amber-50 transition shadow-2xs"><i class="fa-solid fa-face-smile"></i> Hugging Face</a>
-                    <a href="https://github.com/MatinEbrahimkhani/PerSpaCor_components" target="_blank" class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white text-slate-800 border border-slate-300 rounded-xl text-xs font-semibold hover:bg-slate-50 transition shadow-2xs"><i class="fa-brands fa-github"></i> GitHub Repository</a>
-                </div>
             </div>
-        </section>
-
-        <!-- Experience & Education Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
             
-            <!-- Experience -->
-            <section id="experience" class="bg-white p-8 rounded-3xl shadow-xs border border-slate-200/80">
-                <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3"><i class="fa-solid fa-briefcase text-primary-600"></i> Experience</h2>
-                <div class="space-y-6 border-l-2 border-primary-100 pl-6 ml-2">
-                    <div class="relative">
-                        <span class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-primary-600 ring-4 ring-white"></span>
-                        <span class="text-xs font-semibold text-primary-600 uppercase tracking-wider">Sep 2024 – Apr 2025</span>
-                        <h3 class="text-base font-bold text-slate-900 mt-0.5">AI Researcher & Developer @ REEICO</h3>
-                        <p class="text-sm text-slate-600 mt-2 leading-relaxed">Designed an end-to-end AI-powered dubbing system integrating ASR, NMT, TTS, and speaker-aware voice cloning. Handled complete MLOps and containerized deployment infrastructure.</p>
-                    </div>
-                    <div class="relative">
-                        <span class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-slate-300 ring-4 ring-white"></span>
-                        <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Jul 2021 – Sep 2024</span>
-                        <h3 class="text-base font-bold text-slate-900 mt-0.5">Freelance Developer & Researcher</h3>
-                        <p class="text-sm text-slate-600 mt-2 leading-relaxed">Conducted independent research on reinforcement learning and algorithmic trading systems for the Forex market alongside custom AI web applications.</p>
-                    </div>
-                    <div class="relative">
-                        <span class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-slate-300 ring-4 ring-white"></span>
-                        <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Apr 2020 – Jul 2021</span>
-                        <h3 class="text-base font-bold text-slate-900 mt-0.5">Software Engineer & Data Analyst @ SAFA Corp.</h3>
-                        <p class="text-sm text-slate-600 mt-2 leading-relaxed">Developed semi-automated and fully-automated algorithmic robots and machine learning prediction models for financial markets.</p>
-                    </div>
-                </div>
-            </section>
+            <div>
+                <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4 border-b pb-2">ML & Deep Learning</h3>
+                <ul class="space-y-2 text-sm text-slate-700">
+                    <li><strong>PyTorch</strong> <span class="text-slate-400">— Advanced</span></li>
+                    <li><strong>Hugging Face</strong> <span class="text-slate-400">— Advanced</span></li>
+                    <li><strong>TensorFlow</strong> <span class="text-slate-400">— Intermediate</span></li>
+                    <li><strong>CUDA</strong> <span class="text-slate-400">— Intermediate</span></li>
+                    <li><strong>TensorBoard</strong> <span class="text-slate-400">— Intermediate</span></li>
+                    <li class="pt-1 text-xs text-slate-500 italic">Datasets and NLP pipelines</li>
+                </ul>
+            </div>
 
-            <!-- Education -->
-            <section id="education" class="bg-white p-8 rounded-3xl shadow-xs border border-slate-200/80">
-                <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3"><i class="fa-solid fa-graduation-cap text-primary-600"></i> Education</h2>
-                <div class="space-y-6 border-l-2 border-primary-100 pl-6 ml-2">
-                    <div class="relative">
-                        <span class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-primary-600 ring-4 ring-white"></span>
-                        <span class="text-xs font-semibold text-primary-600 uppercase tracking-wider">2020 – 2024</span>
-                        <h3 class="text-base font-bold text-slate-900 mt-0.5">M.Sc. in Computer Engineering (AI & Robotics)</h3>
-                        <p class="text-sm text-slate-600">Institute for Advanced Studies in Basic Sciences (IASBS)</p>
-                        <ul class="text-xs text-slate-600 mt-2 space-y-1">
-                            <li><strong>GPA:</strong> 3.11/4 (15.54/20)</li>
-                            <li><strong>Thesis:</strong> Correction of Space and ZWNJ in Persian Text using LLMs (Mentor: Dr. Ebrahim Ansari)</li>
-                        </ul>
-                    </div>
-                    <div class="relative">
-                        <span class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-slate-300 ring-4 ring-white"></span>
-                        <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">2016 – 2020</span>
-                        <h3 class="text-base font-bold text-slate-900 mt-0.5">B.Sc. in Information Technology Engineering</h3>
-                        <p class="text-sm text-slate-600">Institute for Advanced Studies in Basic Sciences (IASBS)</p>
-                        <ul class="text-xs text-slate-600 mt-2 space-y-1">
-                            <li><strong>GPA:</strong> 3.25/4 (16.44/20)</li>
-                            <li><strong>Thesis:</strong> Semi-Automated Forex Assistant (Mentor: Dr. Ebrahim Ansari)</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+            <div>
+                <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4 border-b pb-2">Tools & Systems</h3>
+                <ul class="space-y-2 text-sm text-slate-700">
+                    <li><strong>Linux</strong> <span class="text-slate-400">— Proficient</span></li>
+                    <li><strong>Git</strong> <span class="text-slate-400">— Proficient</span></li>
+                    <li><strong>Docker</strong> <span class="text-slate-400">— Proficient</span></li>
+                    <li><strong>LaTeX</strong> <span class="text-slate-400">— Expert</span></li>
+                    <li><strong>Kubernetes</strong> <span class="text-slate-400">— Intermediate</span></li>
+                </ul>
+            </div>
 
+            <div>
+                <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4 border-b pb-2">Foundations</h3>
+                <ul class="space-y-2 text-sm text-slate-700">
+                    <li><strong>Deep Learning</strong> <span class="text-slate-400">— Architecture</span></li>
+                    <li><strong>Machine Learning</strong> <span class="text-slate-400">— Evaluation</span></li>
+                    <li><strong>Algorithms</strong> <span class="text-slate-400">— Design</span></li>
+                    <li><strong>Probability Theory</strong> <span class="text-slate-400">— Modeling</span></li>
+                    <li><strong>Linear Algebra</strong></li>
+                    <li><strong>Optimization</strong></li>
+                </ul>
+            </div>
         </div>
+    </section>
 
-        <!-- Skills Section -->
-        <section class="bg-white p-8 rounded-3xl shadow-xs border border-slate-200/80">
-            <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3"><i class="fa-solid fa-tools text-primary-600"></i> Technical Expertise</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-sm">
-                <div>
-                    <h3 class="font-bold text-slate-900 mb-3 text-xs uppercase tracking-wider text-slate-400">Programming Languages</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-lg text-xs font-medium">Python (Expert)</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-lg text-xs font-medium">C/C++</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-lg text-xs font-medium">Bash</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-lg text-xs font-medium">JavaScript</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-lg text-xs font-medium">SQL</span>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="font-bold text-slate-900 mb-3 text-xs uppercase tracking-wider text-slate-400">Machine Learning</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-primary-50 text-primary-700 rounded-lg text-xs font-medium">PyTorch</span>
-                        <span class="px-3 py-1 bg-primary-50 text-primary-700 rounded-lg text-xs font-medium">TensorFlow</span>
-                        <span class="px-3 py-1 bg-primary-50 text-primary-700 rounded-lg text-xs font-medium">Hugging Face</span>
-                        <span class="px-3 py-1 bg-primary-50 text-primary-700 rounded-lg text-xs font-medium">CUDA</span>
-                        <span class="px-3 py-1 bg-primary-50 text-primary-700 rounded-lg text-xs font-medium">TensorBoard</span>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="font-bold text-slate-900 mb-3 text-xs uppercase tracking-wider text-slate-400">Engineering & Tools</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-lg text-xs font-medium">Linux</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-lg text-xs font-medium">Git</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-lg text-xs font-medium">Docker</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-lg text-xs font-medium">Kubernetes</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-lg text-xs font-medium">LaTeX</span>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="font-bold text-slate-900 mb-3 text-xs uppercase tracking-wider text-slate-400">Foundations</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-lg text-xs font-medium">Deep Learning</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-lg text-xs font-medium">Algorithms</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-lg text-xs font-medium">Probability</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-lg text-xs font-medium">Linear Algebra</span>
-                    </div>
-                </div>
+    <footer class="bg-slate-900 py-10 text-center border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4">
+            <h3 class="text-lg font-bold text-white mb-4">Matin Ebrahimkhani</h3>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="mailto:mat.ebrahimkhani@gmail.com" class="text-slate-400 hover:text-white transition"><i class="fa-solid fa-envelope text-xl"></i></a>
+                <a href="https://github.com/MatinEbrahimkhani" target="_blank" class="text-slate-400 hover:text-white transition"><i class="fa-brands fa-github text-xl"></i></a>
+                <a href="https://www.linkedin.com/in/matin-ebrahimkhani-ba1b91185/" target="_blank" class="text-slate-400 hover:text-white transition"><i class="fa-brands fa-linkedin text-xl"></i></a>
             </div>
-        </section>
-
-        <!-- Photo Gallery Section -->
-        <section id="gallery" class="bg-white p-8 rounded-3xl shadow-xs border border-slate-200/80">
-            <h2 class="text-2xl font-bold text-slate-900 mb-2 flex items-center gap-3"><i class="fa-solid fa-images text-primary-600"></i> Photo Gallery</h2>
-            <p class="text-slate-600 text-sm mb-8">A glimpse into conferences, research environments, and academic moments.</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Gallery Placeholder 1 -->
-                <div class="group bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden shadow-2xs hover:shadow-md transition">
-                    <div class="h-48 bg-slate-200 flex items-center justify-center text-slate-400 font-medium">
-                        <!-- Replace with: <img src="assets/gallery-1.jpg" alt="..." class="w-full h-full object-cover"> -->
-                        <span class="text-xs"><i class="fa-solid fa-image text-xl mb-1 block"></i> Photo Placeholder 1</span>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-slate-900 text-sm">RANLP 2025 Conference</h3>
-                        <p class="text-slate-500 text-xs mt-1">Presenting research findings on transformer-based text correction.</p>
-                    </div>
-                </div>
-
-                <!-- Gallery Placeholder 2 -->
-                <div class="group bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden shadow-2xs hover:shadow-md transition">
-                    <div class="h-48 bg-slate-200 flex items-center justify-center text-slate-400 font-medium">
-                        <!-- Replace with: <img src="assets/gallery-2.jpg" alt="..." class="w-full h-full object-cover"> -->
-                        <span class="text-xs"><i class="fa-solid fa-image text-xl mb-1 block"></i> Photo Placeholder 2</span>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-slate-900 text-sm">Lab & GPU Cluster Setup</h3>
-                        <p class="text-slate-500 text-xs mt-1">Managing MLOps pipelines and large-scale model training nodes.</p>
-                    </div>
-                </div>
-
-                <!-- Gallery Placeholder 3 -->
-                <div class="group bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden shadow-2xs hover:shadow-md transition">
-                    <div class="h-48 bg-slate-200 flex items-center justify-center text-slate-400 font-medium">
-                        <!-- Replace with: <img src="assets/gallery-3.jpg" alt="..." class="w-full h-full object-cover"> -->
-                        <span class="text-xs"><i class="fa-solid fa-image text-xl mb-1 block"></i> Photo Placeholder 3</span>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-slate-900 text-sm">IASBS Community Work</h3>
-                        <p class="text-slate-500 text-xs mt-1">Founding member of the IASBS Music Society and student community events.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 py-12 mt-20 border-t border-slate-800">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
-            <p>&copy; 2026 Matin Ebrahimkhani. All rights reserved.</p>
-            <div class="flex space-x-6">
-                <a href="mailto:mat.ebrahimkhani@gmail.com" class="hover:text-white transition">Email</a>
-                <a href="https://github.com/MatinEbrahimkhani" target="_blank" class="hover:text-white transition">GitHub</a>
-                <a href="https://www.linkedin.com/in/matin-ebrahimkhani-ba1b91185/" target="_blank" class="hover:text-white transition">LinkedIn</a>
-            </div>
+            <p class="text-slate-500 text-sm">&copy; 2026 Matin Ebrahimkhani. All rights reserved.</p>
         </div>
     </footer>
 
