@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matin Ebrahimkhani | AI Researcher</title>
+    <!-- Tailwind CSS with Dark Mode support -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: { sans: ['Inter', 'sans-serif'] },
                     colors: {
-                        primary: { 50: '#f0f9ff', 100: '#e0f2fe', 500: '#0ea5e9', 600: '#0284c7', 700: '#0369a1', 900: '#0c4a6e' }
+                        primary: { 50: '#f0f9ff', 100: '#e0f2fe', 500: '#0ea5e9', 600: '#0284c7', 700: '#0369a1', 800: '#075985', 900: '#0c4a6e' }
                     }
                 }
             }
@@ -21,103 +23,133 @@
     </script>
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .glass-nav { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); }
+        .glass-nav { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); }
+        .dark .glass-nav { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(12px); }
+        .banner-overlay {
+            background: linear-gradient(135deg, rgba(12, 74, 110, 0.92) 0%, rgba(3, 105, 161, 0.85) 100%);
+        }
+        .dark .banner-overlay {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(12, 74, 110, 0.9) 100%);
+        }
     </style>
+    <script>
+        // Check initial theme preference
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-primary-200 selection:text-primary-900">
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 antialiased selection:bg-primary-200 selection:text-primary-900 transition-colors duration-300">
 
-    <nav class="glass-nav fixed w-full z-50 top-0 border-b border-slate-200 transition-all duration-300">
+    <!-- Navigation Bar -->
+    <nav class="glass-nav fixed w-full z-50 top-0 border-b border-slate-200/80 dark:border-slate-800/80 transition-all duration-300">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <a href="#" class="font-bold text-xl text-primary-900 tracking-tight">M. Ebrahimkhani</a>
-                <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
-                    <a href="#about" class="hover:text-primary-600 transition">About</a>
-                    <a href="#research" class="hover:text-primary-600 transition">Research</a>
-                    <a href="#publications" class="hover:text-primary-600 transition">Publications</a>
-                    <a href="#experience" class="hover:text-primary-600 transition">Experience</a>
-                    <a href="#skills" class="hover:text-primary-600 transition">Skills</a>
-                    <a href="#gallery" class="hover:text-primary-600 transition">Gallery</a>
+                <a href="#" class="font-bold text-xl text-primary-900 dark:text-primary-400 tracking-tight">M. Ebrahimkhani</a>
+                <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600 dark:text-slate-300">
+                    <a href="#about" class="hover:text-primary-600 dark:hover:text-primary-400 transition">About</a>
+                    <a href="#research" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Research</a>
+                    <a href="#publications" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Publications</a>
+                    <a href="#experience" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Experience</a>
+                    <a href="#skills" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Skills</a>
+                    <a href="#gallery" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Gallery</a>
                 </div>
-                <div class="flex space-x-4">
-                    <a href="https://github.com/MatinEbrahimkhani" target="_blank" class="text-slate-500 hover:text-primary-600 transition text-lg"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/matin-ebrahimkhani-ba1b91185/" target="_blank" class="text-slate-500 hover:text-primary-600 transition text-lg"><i class="fa-brands fa-linkedin"></i></a>
+                <div class="flex items-center space-x-4">
+                    <!-- Dark Mode Toggle Button -->
+                    <button id="theme-toggle" type="button" aria-label="Toggle dark mode" class="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                        <i id="theme-toggle-dark-icon" class="fa-solid fa-moon text-lg hidden"></i>
+                        <i id="theme-toggle-light-icon" class="fa-solid fa-sun text-lg hidden"></i>
+                    </button>
+                    <a href="https://github.com/MatinEbrahimkhani" target="_blank" class="text-slate-500 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400 transition text-lg"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/matin-ebrahimkhani-ba1b91185/" target="_blank" class="text-slate-500 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400 transition text-lg"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <section id="about" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12">
-        <div class="flex-1 space-y-6 text-center md:text-left">
-            <div class="inline-block px-4 py-1.5 rounded-full bg-primary-50 text-primary-700 text-sm font-semibold tracking-wide border border-primary-100">
-                Ph.D. Applicant & AI Researcher
-            </div>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                Matin Ebrahimkhani
-            </h1>
-            <p class="text-lg text-slate-600 max-w-2xl mx-auto md:mx-0 leading-relaxed">
-                Specializing in Natural Language Processing, Large Language Models, Multimodal AI, and Scalable MLOps. Passionate about bridging theoretical AI research with robust, real-world deployment.
-            </p>
+    <!-- Banner Hero Section (With Image Banner Background) -->
+    <section id="about" class="pt-28 pb-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200/50 dark:border-slate-800">
+            <!-- Banner Background Image -->
+            <img src="assets/banner.jpg" alt="Banner Background" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1600&q=80';" class="absolute inset-0 w-full h-full object-cover">
             
-            <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-4">
-                <a href="mailto:mat.ebrahimkhani@gmail.com" class="flex items-center gap-2 px-5 py-2.5 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition font-medium shadow-sm">
-                    <i class="fa-solid fa-envelope"></i> Get in touch
-                </a>
-                <!-- Replace assets/cv.pdf with your actual PDF filename -->
-                <a href="assets/cv.pdf" target="_blank" class="flex items-center gap-2 px-5 py-2.5 bg-white text-slate-700 border border-slate-300 rounded-lg hover:bg-slate-50 transition font-medium shadow-sm">
-                    <i class="fa-solid fa-download"></i> Download CV
-                </a>
+            <!-- Banner Gradient Overlay -->
+            <div class="banner-overlay relative z-10 p-8 sm:p-12 text-white flex flex-col-reverse md:flex-row items-center gap-10">
+                <div class="flex-1 space-y-6 text-center md:text-left">
+                    <div class="inline-block px-4 py-1.5 rounded-full bg-white/10 dark:bg-slate-900/40 text-primary-100 text-sm font-semibold tracking-wide border border-white/20 backdrop-blur-md">
+                        Ph.D. Applicant & AI Researcher
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Matin Ebrahimkhani
+                    </h1>
+                    <p class="text-base sm:text-lg text-primary-100 max-w-2xl leading-relaxed">
+                        Specializing in Natural Language Processing, Large Language Models, Multimodal AI, and Scalable MLOps. Passionate about bridging theoretical AI research with robust, real-world deployment.
+                    </p>
+                    
+                    <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-2">
+                        <a href="mailto:mat.ebrahimkhani@gmail.com" class="flex items-center gap-2 px-5 py-2.5 bg-white text-primary-900 hover:bg-primary-50 rounded-xl transition font-medium shadow-md">
+                            <i class="fa-solid fa-envelope"></i> Get in touch
+                        </a>
+                        <a href="assets/m.ebrahimkhani-cv.pdf" target="_blank" class="flex items-center gap-2 px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-md rounded-xl transition font-medium shadow-md">
+                            <i class="fa-solid fa-download"></i> Download CV
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="w-56 h-56 sm:w-64 sm:h-64 shrink-0 relative group">
+                    <div class="absolute inset-0 bg-primary-400 rounded-full blur-xl opacity-40 group-hover:opacity-70 transition duration-500"></div>
+                    <img src="assets/profile.jpg" alt="Matin Ebrahimkhani" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Matin+Ebrahimkhani&background=0284c7&color=fff&size=512';" class="relative w-full h-full object-cover rounded-full border-4 border-white/40 shadow-2xl">
+                </div>
             </div>
-        </div>
-        
-        <div class="w-64 h-64 md:w-80 md:h-80 shrink-0 relative group">
-            <div class="absolute inset-0 bg-primary-200 rounded-full blur-2xl opacity-50 group-hover:opacity-75 transition duration-500"></div>
-            <!-- Replace assets/profile.jpg with your actual profile picture path -->
-            <img src="assets/profile.jpg" alt="Matin Ebrahimkhani" onerror="this.src='https://ui-avatars.com/api/?name=Matin+Ebrahimkhani&background=0ea5e9&color=fff&size=512'" class="relative w-full h-full object-cover rounded-full border-4 border-white shadow-xl">
         </div>
     </section>
 
-    <section id="research" class="py-16 bg-white border-y border-slate-200">
+    <!-- Research Interests -->
+    <section id="research" class="py-16 bg-white dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800 transition-colors duration-300">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2"><i class="fa-solid fa-microscope text-primary-600"></i> Research Interests</h2>
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-8 flex items-center gap-2"><i class="fa-solid fa-microscope text-primary-600 dark:text-primary-400"></i> Research Interests</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-md transition">
+                <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-700/60 hover:shadow-md transition">
                     <i class="fa-solid fa-language text-2xl text-primary-500 mb-4"></i>
-                    <h3 class="font-bold text-slate-800 mb-2">NLP</h3>
-                    <p class="text-sm text-slate-600">Large language models, language understanding and generation, text correction, sequence labeling, multilingual NLP.</p>
+                    <h3 class="font-bold text-slate-800 dark:text-slate-100 mb-2">NLP</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-300">Large language models, language understanding and generation, text correction, sequence labeling, multilingual NLP.</p>
                 </div>
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-md transition">
+                <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-700/60 hover:shadow-md transition">
                     <i class="fa-solid fa-photo-film text-2xl text-primary-500 mb-4"></i>
-                    <h3 class="font-bold text-slate-800 mb-2">Speech & Multimodal</h3>
-                    <p class="text-sm text-slate-600">Automatic speech recognition, text-to-speech systems, neural voice generation, language-speech integration, and multimodal learning.</p>
+                    <h3 class="font-bold text-slate-800 dark:text-slate-100 mb-2">Speech & Multimodal</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-300">Automatic speech recognition, text-to-speech systems, neural voice generation, language-speech integration, and multimodal learning.</p>
                 </div>
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-md transition">
+                <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-700/60 hover:shadow-md transition">
                     <i class="fa-solid fa-shield-halved text-2xl text-primary-500 mb-4"></i>
-                    <h3 class="font-bold text-slate-800 mb-2">Efficient AI</h3>
-                    <p class="text-sm text-slate-600">Model adaptation and fine-tuning, efficient training and inference, evaluation of AI systems, and robust machine learning.</p>
+                    <h3 class="font-bold text-slate-800 dark:text-slate-100 mb-2">Efficient AI</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-300">Model adaptation and fine-tuning, efficient training and inference, evaluation of AI systems, and robust machine learning.</p>
                 </div>
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-md transition">
+                <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-700/60 hover:shadow-md transition">
                     <i class="fa-solid fa-server text-2xl text-primary-500 mb-4"></i>
-                    <h3 class="font-bold text-slate-800 mb-2">Applied ML Systems</h3>
-                    <p class="text-sm text-slate-600">Scalable AI pipelines, real-world deployment of machine learning models, and reproducible AI research.</p>
+                    <h3 class="font-bold text-slate-800 dark:text-slate-100 mb-2">Applied ML Systems</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-300">Scalable AI pipelines, real-world deployment of machine learning models, and reproducible AI research.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Publications -->
     <section id="publications" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold text-slate-900 mb-10 flex items-center gap-3">
-            <i class="fa-solid fa-book-open text-primary-600"></i> Publications & Research
+        <h2 class="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-10 flex items-center gap-3">
+            <i class="fa-solid fa-book-open text-primary-600 dark:text-primary-400"></i> Publications & Research
         </h2>
         
         <div class="space-y-8">
-            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition duration-300">
+            <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition duration-300">
                 <div class="flex flex-col lg:flex-row gap-6 justify-between items-start">
                     <div class="space-y-4">
-                        <span class="text-sm font-semibold text-primary-600">RANLP 2025</span>
-                        <h3 class="text-xl font-bold text-slate-900 leading-tight">PerSpaCor: Correcting Space and ZWNJ Errors in Persian Text with Transformer Models</h3>
-                        <p class="text-slate-500 text-sm"><strong>Matin Ebrahimkhani</strong>, Ebrahim Ansari</p>
+                        <span class="text-sm font-semibold text-primary-600 dark:text-primary-400">RANLP 2025</span>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 leading-tight">PerSpaCor: Correcting Space and ZWNJ Errors in Persian Text with Transformer Models</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm"><strong>Matin Ebrahimkhani</strong>, Ebrahim Ansari</p>
                         
-                        <ul class="text-slate-600 text-sm space-y-2 mt-4 list-disc list-inside">
+                        <ul class="text-slate-600 dark:text-slate-300 text-sm space-y-2 mt-4 list-disc list-inside">
                             <li><strong>Novel Research:</strong> Engineered and evaluated four original transformer-based classifier architectures—ReLU-Norm, DualStep DropNet, and SimplexNet—achieving a State-of-the-Art macro F1-score of 97.26%.</li>
                             <li><strong>Dataset Leadership:</strong> Independently curated, preprocessed, and manually annotated a massive dataset of over 12.7 million words.</li>
                             <li><strong>Open Source Impact:</strong> Released all state of the art models, code, and the annotated corpus to the research community and deployed a public web-based correction system.</li>
@@ -125,25 +157,25 @@
                     </div>
                     
                     <div class="flex flex-col gap-3 shrink-0 w-full lg:w-auto">
-                        <a href="https://aclanthology.org/2025.ranlp-1.40/" target="_blank" class="flex items-center justify-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-sm font-medium transition">
+                        <a href="https://aclanthology.org/2025.ranlp-1.40/" target="_blank" class="flex items-center justify-center gap-2 px-4 py-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg text-sm font-medium transition">
                             <i class="fa-solid fa-file-pdf text-red-500"></i> ACL Anthology
                         </a>
-                        <a href="https://huggingface.co/PerSpaCor" target="_blank" class="flex items-center justify-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-sm font-medium transition">
+                        <a href="https://huggingface.co/PerSpaCor" target="_blank" class="flex items-center justify-center gap-2 px-4 py-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg text-sm font-medium transition">
                             <i class="fa-solid fa-face-smiling-hands text-yellow-500"></i> Hugging Face
                         </a>
-                        <a href="https://github.com/MatinEbrahimkhani/PerSpaCor_components" target="_blank" class="flex items-center justify-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-sm font-medium transition">
+                        <a href="https://github.com/MatinEbrahimkhani/PerSpaCor_components" target="_blank" class="flex items-center justify-center gap-2 px-4 py-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg text-sm font-medium transition">
                             <i class="fa-brands fa-github"></i> GitHub Repo
                         </a>
                     </div>
                 </div>
             </div>
 
-            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition duration-300">
+            <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition duration-300">
                 <div class="space-y-4">
-                    <span class="text-sm font-semibold text-amber-600 bg-amber-50 px-3 py-1 rounded-full border border-amber-100">In Progress</span>
-                    <h3 class="text-xl font-bold text-slate-900 leading-tight">Efficient Adaptation of Foundation Models: A Comparative Study of Parameter-Efficient Fine-Tuning Methods for Domain-Specific Tasks</h3>
-                    <p class="text-slate-500 text-sm"><strong>Matin Ebrahimkhani</strong>, Mina Sirinchi, Mo Nasher, Mobin Ebrahimkhani</p>
-                    <p class="text-slate-600 text-sm leading-relaxed mt-4">
+                    <span class="text-sm font-semibold text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/40 px-3 py-1 rounded-full border border-amber-200 dark:border-amber-800">In Progress</span>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 leading-tight">Efficient Adaptation of Foundation Models: A Comparative Study of Parameter-Efficient Fine-Tuning Methods for Domain-Specific Tasks</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm"><strong>Matin Ebrahimkhani</strong>, Mina Sirinchi, Mo Nasher, Mobin Ebrahimkhani</p>
+                    <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mt-4">
                         Investigating parameter-efficient fine-tuning techniques (LoRA, QLoRA, Adapters, Prefix Tuning, and full fine-tuning) across multiple NLP tasks. The study evaluates accuracy/F1, BLEU/ROUGE, and resource metrics (training time/GPU memory, inference latency, and number of trained parameters) to compare performance–efficiency trade-offs. Planned code and scripts will be released for reproducibility.
                     </p>
                 </div>
@@ -151,48 +183,49 @@
         </div>
     </section>
 
-    <section class="py-20 bg-slate-100 border-y border-slate-200">
+    <!-- Experience & Education Split -->
+    <section class="py-20 bg-slate-100 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800 transition-colors duration-300">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16">
             
             <div id="experience">
-                <h2 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
-                    <i class="fa-solid fa-briefcase text-primary-600"></i> Experience
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-8 flex items-center gap-3">
+                    <i class="fa-solid fa-briefcase text-primary-600 dark:text-primary-400"></i> Experience
                 </h2>
-                <div class="space-y-8 relative before:absolute before:inset-0 before:ml-2 md:before:ml-0 md:before:translate-x-0 before:h-full before:w-0.5 before:bg-slate-300">
+                <div class="space-y-8 relative before:absolute before:inset-0 before:ml-2 md:before:ml-0 md:before:translate-x-0 before:h-full before:w-0.5 before:bg-slate-300 dark:before:bg-slate-700">
                     
                     <div class="relative flex items-center group">
-                        <div class="absolute left-[-5px] w-3 h-3 rounded-full border-2 border-primary-600 bg-white ring-4 ring-slate-100"></div>
-                        <div class="ml-6 bg-white p-5 rounded-2xl shadow-sm border border-slate-200 w-full">
-                            <h3 class="font-bold text-slate-900 text-base">AI Researcher and Developer</h3>
-                            <p class="text-primary-600 font-medium text-sm mb-3">REEICO <span class="text-slate-400 font-normal">| Sep 2024 – Apr 2025</span></p>
-                            <p class="text-slate-600 text-sm leading-relaxed">Designed and developed an end-to-end AI-powered dubbing system. The pipeline integrated automatic speech recognition (ASR), neural machine translation (NMT), text-to-speech synthesis (TTS), and speaker-aware voice cloning. Independently handled the MLOps infrastructure.</p>
+                        <div class="absolute left-[-5px] w-3 h-3 rounded-full border-2 border-primary-600 dark:border-primary-400 bg-white dark:bg-slate-900 ring-4 ring-slate-100 dark:ring-slate-900"></div>
+                        <div class="ml-6 bg-white dark:bg-slate-900 p-5 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 w-full">
+                            <h3 class="font-bold text-slate-900 dark:text-slate-100 text-base">AI Researcher and Developer</h3>
+                            <p class="text-primary-600 dark:text-primary-400 font-medium text-sm mb-3">REEICO <span class="text-slate-400 font-normal">| Sep 2024 – Apr 2025</span></p>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">Designed and developed an end-to-end AI-powered dubbing system. The pipeline integrated automatic speech recognition (ASR), neural machine translation (NMT), text-to-speech synthesis (TTS), and speaker-aware voice cloning. Independently handled the MLOps infrastructure.</p>
                         </div>
                     </div>
 
                     <div class="relative flex items-center group">
-                        <div class="absolute left-[-5px] w-3 h-3 rounded-full border-2 border-slate-400 bg-white ring-4 ring-slate-100"></div>
-                        <div class="ml-6 bg-white p-5 rounded-2xl shadow-sm border border-slate-200 w-full">
-                            <h3 class="font-bold text-slate-900 text-base">Freelance Developer and Researcher</h3>
-                            <p class="text-primary-600 font-medium text-sm mb-3">Independent <span class="text-slate-400 font-normal">| Jul 2021 – Sep 2024</span></p>
-                            <p class="text-slate-600 text-sm leading-relaxed">Designed and implemented web-based services and AI-driven applications. Conducted independent research on reinforcement learning and algorithmic trading for the Forex market.</p>
+                        <div class="absolute left-[-5px] w-3 h-3 rounded-full border-2 border-slate-400 dark:border-slate-600 bg-white dark:bg-slate-900 ring-4 ring-slate-100 dark:ring-slate-900"></div>
+                        <div class="ml-6 bg-white dark:bg-slate-900 p-5 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 w-full">
+                            <h3 class="font-bold text-slate-900 dark:text-slate-100 text-base">Freelance Developer and Researcher</h3>
+                            <p class="text-primary-600 dark:text-primary-400 font-medium text-sm mb-3">Independent <span class="text-slate-400 font-normal">| Jul 2021 – Sep 2024</span></p>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">Designed and implemented web-based services and AI-driven applications. Conducted independent research on reinforcement learning and algorithmic trading for the Forex market.</p>
                         </div>
                     </div>
 
                     <div class="relative flex items-center group">
-                        <div class="absolute left-[-5px] w-3 h-3 rounded-full border-2 border-slate-400 bg-white ring-4 ring-slate-100"></div>
-                        <div class="ml-6 bg-white p-5 rounded-2xl shadow-sm border border-slate-200 w-full">
-                            <h3 class="font-bold text-slate-900 text-base">Software Engineer and Data Analyst</h3>
-                            <p class="text-primary-600 font-medium text-sm mb-3">SAFA Corp. <span class="text-slate-400 font-normal">| Apr 2020 – Jul 2021</span></p>
-                            <p class="text-slate-600 text-sm leading-relaxed">Developed semi-automated and fully-automated robots for the Forex market. Performed statistical analysis and implemented machine learning algorithms.</p>
+                        <div class="absolute left-[-5px] w-3 h-3 rounded-full border-2 border-slate-400 dark:border-slate-600 bg-white dark:bg-slate-900 ring-4 ring-slate-100 dark:ring-slate-900"></div>
+                        <div class="ml-6 bg-white dark:bg-slate-900 p-5 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 w-full">
+                            <h3 class="font-bold text-slate-900 dark:text-slate-100 text-base">Software Engineer and Data Analyst</h3>
+                            <p class="text-primary-600 dark:text-primary-400 font-medium text-sm mb-3">SAFA Corp. <span class="text-slate-400 font-normal">| Apr 2020 – Jul 2021</span></p>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">Developed semi-automated and fully-automated robots for the Forex market. Performed statistical analysis and implemented machine learning algorithms.</p>
                         </div>
                     </div>
 
                     <div class="relative flex items-center group">
-                        <div class="absolute left-[-5px] w-3 h-3 rounded-full border-2 border-slate-400 bg-white ring-4 ring-slate-100"></div>
-                        <div class="ml-6 bg-white p-5 rounded-2xl shadow-sm border border-slate-200 w-full">
-                            <h3 class="font-bold text-slate-900 text-base">Programmer & Technical Lead</h3>
-                            <p class="text-primary-600 font-medium text-sm mb-3">Naghil Noghoul <span class="text-slate-400 font-normal">| Dec 2018 – Oct 2019</span></p>
-                            <p class="text-slate-600 text-sm leading-relaxed">Led the technical development of Naghil Noghoul, an interactive storytelling game-app for children aged 3–12 built with C# and the Unity engine.</p>
+                        <div class="absolute left-[-5px] w-3 h-3 rounded-full border-2 border-slate-400 dark:border-slate-600 bg-white dark:bg-slate-900 ring-4 ring-slate-100 dark:ring-slate-900"></div>
+                        <div class="ml-6 bg-white dark:bg-slate-900 p-5 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 w-full">
+                            <h3 class="font-bold text-slate-900 dark:text-slate-100 text-base">Programmer & Technical Lead</h3>
+                            <p class="text-primary-600 dark:text-primary-400 font-medium text-sm mb-3">Naghil Noghoul <span class="text-slate-400 font-normal">| Dec 2018 – Oct 2019</span></p>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">Led the technical development of Naghil Noghoul, an interactive storytelling game-app for children aged 3–12 built with C# and the Unity engine.</p>
                         </div>
                     </div>
 
@@ -201,34 +234,34 @@
 
             <div>
                 <div id="education" class="mb-12">
-                    <h2 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
-                        <i class="fa-solid fa-graduation-cap text-primary-600"></i> Education
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-8 flex items-center gap-3">
+                        <i class="fa-solid fa-graduation-cap text-primary-600 dark:text-primary-400"></i> Education
                     </h2>
                     <div class="space-y-6">
-                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 border-l-4 border-l-primary-500">
+                        <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 border-l-4 border-l-primary-500">
                             <div class="flex justify-between items-start mb-2">
                                 <div>
-                                    <h3 class="font-bold text-slate-900">M.Sc. in Computer Engineering (AI & Robotics)</h3>
-                                    <p class="text-slate-600 text-sm">IASBS, Zanjan, Iran</p>
+                                    <h3 class="font-bold text-slate-900 dark:text-slate-100">M.Sc. in Computer Engineering (AI & Robotics)</h3>
+                                    <p class="text-slate-600 dark:text-slate-400 text-sm">IASBS, Zanjan, Iran</p>
                                 </div>
-                                <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">2020 – 2024</span>
+                                <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs rounded-full font-medium">2020 – 2024</span>
                             </div>
-                            <ul class="text-sm text-slate-600 mt-3 space-y-1">
-                                <li><strong class="text-slate-800">GPA:</strong> 3.11/4 (15.54/20)</li>
-                                <li><strong class="text-slate-800">Thesis:</strong> Correction of Space and ZWNJ in Persian Text, Using Sequence Labeling with Pre-trained Large Language Models</li>
+                            <ul class="text-sm text-slate-600 dark:text-slate-300 mt-3 space-y-1">
+                                <li><strong class="text-slate-800 dark:text-slate-100">GPA:</strong> 3.11/4 (15.54/20)</li>
+                                <li><strong class="text-slate-800 dark:text-slate-100">Thesis:</strong> Correction of Space and ZWNJ in Persian Text, Using Sequence Labeling with Pre-trained Large Language Models</li>
                             </ul>
                         </div>
 
-                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 border-l-4 border-l-slate-400">
+                        <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 border-l-4 border-l-slate-400">
                             <div class="flex justify-between items-start mb-2">
                                 <div>
-                                    <h3 class="font-bold text-slate-900">B.Sc. in Information Technology Engineering</h3>
-                                    <p class="text-slate-600 text-sm">IASBS, Zanjan, Iran</p>
+                                    <h3 class="font-bold text-slate-900 dark:text-slate-100">B.Sc. in Information Technology Engineering</h3>
+                                    <p class="text-slate-600 dark:text-slate-400 text-sm">IASBS, Zanjan, Iran</p>
                                 </div>
-                                <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs rounded-full font-medium">2016 – 2020</span>
+                                <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs rounded-full font-medium">2016 – 2020</span>
                             </div>
-                            <ul class="text-sm text-slate-600 mt-3 space-y-1">
-                                <li><strong class="text-slate-800">Thesis:</strong> Semi-Automated Forex Assistant</li>
+                            <ul class="text-sm text-slate-600 dark:text-slate-300 mt-3 space-y-1">
+                                <li><strong class="text-slate-800 dark:text-slate-100">Thesis:</strong> Semi-Automated Forex Assistant</li>
                             </ul>
                         </div>
                     </div>
@@ -237,108 +270,270 @@
         </div>
     </section>
 
+    <!-- Redesigned Technical Expertise / Skills Section -->
     <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-        <h2 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
-            <i class="fa-solid fa-code text-primary-600"></i> Technical Expertise
-        </h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
             <div>
-                <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4 border-b pb-2">Languages</h3>
-                <ul class="space-y-2 text-sm text-slate-700">
-                    <li><strong>Python</strong> <span class="text-slate-400">— Expert</span></li>
-                    <li><strong>C/C++</strong> <span class="text-slate-400">— Advanced</span></li>
-                    <li><strong>Bash</strong> <span class="text-slate-400">— Proficient</span></li>
-                    <li><strong>HTML/CSS</strong> <span class="text-slate-400">— Advanced</span></li>
-                    <li><strong>JavaScript</strong> <span class="text-slate-400">— Familiar</span></li>
-                    <li><strong>SQL</strong> <span class="text-slate-400">— Familiar</span></li>
-                    <li><strong>C#</strong> <span class="text-slate-400">— Familiar</span></li>
-                </ul>
+                <span class="text-xs font-semibold text-primary-600 dark:text-primary-400 uppercase tracking-widest">Stack & Competencies</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 dark:text-slate-100 mt-1 flex items-center gap-3">
+                    <i class="fa-solid fa-code text-primary-600 dark:text-primary-400"></i> Technical Expertise
+                </h2>
             </div>
-            
-            <div>
-                <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4 border-b pb-2">ML & Deep Learning</h3>
-                <ul class="space-y-2 text-sm text-slate-700">
-                    <li><strong>PyTorch</strong> <span class="text-slate-400">— Advanced</span></li>
-                    <li><strong>Hugging Face</strong> <span class="text-slate-400">— Advanced</span></li>
-                    <li><strong>TensorFlow</strong> <span class="text-slate-400">— Intermediate</span></li>
-                    <li><strong>CUDA</strong> <span class="text-slate-400">— Intermediate</span></li>
-                    <li><strong>TensorBoard</strong> <span class="text-slate-400">— Intermediate</span></li>
-                    <li class="pt-1 text-xs text-slate-500 italic">Datasets and NLP pipelines</li>
-                </ul>
+            <p class="text-slate-500 dark:text-slate-400 text-sm mt-2 md:mt-0 max-w-md">Categorized technical competencies with hands-on proficiency levels built across research and industry.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Card 1: Machine Learning & AI -->
+            <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition">
+                <div class="flex items-center justify-between mb-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-primary-50 dark:bg-primary-950/60 text-primary-600 dark:text-primary-400 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 dark:text-slate-100 text-lg">Machine Learning & DL</h3>
+                    </div>
+                    <span class="px-2.5 py-1 text-xs font-semibold rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-800 dark:text-primary-200">Core Domain</span>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between text-sm font-medium mb-1">
+                            <span class="text-slate-800 dark:text-slate-200">PyTorch</span>
+                            <span class="text-xs text-primary-600 dark:text-primary-400">Advanced / Expert</span>
+                        </div>
+                        <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-primary-600 dark:bg-primary-500 h-full rounded-full" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm font-medium mb-1">
+                            <span class="text-slate-800 dark:text-slate-200">Hugging Face Transformers</span>
+                            <span class="text-xs text-primary-600 dark:text-primary-400">Advanced</span>
+                        </div>
+                        <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-primary-600 dark:bg-primary-500 h-full rounded-full" style="width: 88%;"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm font-medium mb-1">
+                            <span class="text-slate-800 dark:text-slate-200">TensorFlow</span>
+                            <span class="text-xs text-slate-500 dark:text-slate-400">Intermediate</span>
+                        </div>
+                        <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-primary-600/70 dark:bg-primary-500/70 h-full rounded-full" style="width: 65%;"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm font-medium mb-1">
+                            <span class="text-slate-800 dark:text-slate-200">CUDA & TensorBoard</span>
+                            <span class="text-xs text-slate-500 dark:text-slate-400">Intermediate</span>
+                        </div>
+                        <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-primary-600/70 dark:bg-primary-500/70 h-full rounded-full" style="width: 60%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex flex-wrap gap-2">
+                    <span class="text-xs px-2.5 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-lg">NLP Pipelines</span>
+                    <span class="text-xs px-2.5 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-lg">PEFT / LoRA</span>
+                    <span class="text-xs px-2.5 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-lg">Sequence Labeling</span>
+                </div>
             </div>
 
-            <div>
-                <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4 border-b pb-2">Tools & Systems</h3>
-                <ul class="space-y-2 text-sm text-slate-700">
-                    <li><strong>Linux</strong> <span class="text-slate-400">— Proficient</span></li>
-                    <li><strong>Git</strong> <span class="text-slate-400">— Proficient</span></li>
-                    <li><strong>Docker</strong> <span class="text-slate-400">— Proficient</span></li>
-                    <li><strong>LaTeX</strong> <span class="text-slate-400">— Expert</span></li>
-                    <li><strong>Kubernetes</strong> <span class="text-slate-400">— Intermediate</span></li>
-                </ul>
+            <!-- Card 2: Programming Languages -->
+            <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition">
+                <div class="flex items-center justify-between mb-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 dark:text-slate-100 text-lg">Programming</h3>
+                    </div>
+                    <span class="px-2.5 py-1 text-xs font-semibold rounded-full bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-emerald-200">Polyglot</span>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between text-sm font-medium mb-1">
+                            <span class="text-slate-800 dark:text-slate-200">Python</span>
+                            <span class="text-xs text-emerald-600 dark:text-emerald-400">Expert</span>
+                        </div>
+                        <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-emerald-600 dark:bg-emerald-500 h-full rounded-full" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm font-medium mb-1">
+                            <span class="text-slate-800 dark:text-slate-200">C / C++</span>
+                            <span class="text-xs text-emerald-600 dark:text-emerald-400">Advanced</span>
+                        </div>
+                        <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-emerald-600 dark:bg-emerald-500 h-full rounded-full" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm font-medium mb-1">
+                            <span class="text-slate-800 dark:text-slate-200">Bash Scripting</span>
+                            <span class="text-xs text-slate-500 dark:text-slate-400">Proficient</span>
+                        </div>
+                        <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-emerald-600/70 dark:bg-emerald-500/70 h-full rounded-full" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm font-medium mb-1">
+                            <span class="text-slate-800 dark:text-slate-200">HTML / CSS & Web Tech</span>
+                            <span class="text-xs text-slate-500 dark:text-slate-400">Advanced</span>
+                        </div>
+                        <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-emerald-600/70 dark:bg-emerald-500/70 h-full rounded-full" style="width: 78%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex flex-wrap gap-2">
+                    <span class="text-xs px-2.5 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-lg">JavaScript</span>
+                    <span class="text-xs px-2.5 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-lg">SQL</span>
+                    <span class="text-xs px-2.5 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-lg">C#</span>
+                </div>
             </div>
 
-            <div>
-                <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4 border-b pb-2">Foundations</h3>
-                <ul class="space-y-2 text-sm text-slate-700">
-                    <li><strong>Deep Learning</strong> <span class="text-slate-400">— Architecture</span></li>
-                    <li><strong>Machine Learning</strong> <span class="text-slate-400">— Evaluation</span></li>
-                    <li><strong>Algorithms</strong> <span class="text-slate-400">— Design</span></li>
-                    <li><strong>Probability Theory</strong> <span class="text-slate-400">— Modeling</span></li>
-                    <li><strong>Linear Algebra</strong></li>
-                    <li><strong>Optimization</strong></li>
-                </ul>
+            <!-- Card 3: Infrastructure & MLOps -->
+            <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition">
+                <div class="flex items-center justify-between mb-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-server"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 dark:text-slate-100 text-lg">Systems & MLOps</h3>
+                    </div>
+                    <span class="px-2.5 py-1 text-xs font-semibold rounded-full bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-200">Infrastructure</span>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between text-sm font-medium mb-1">
+                            <span class="text-slate-800 dark:text-slate-200">Linux (SysAdmin & Daily OS)</span>
+                            <span class="text-xs text-purple-600 dark:text-purple-400">Proficient</span>
+                        </div>
+                        <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-purple-600 dark:bg-purple-500 h-full rounded-full" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm font-medium mb-1">
+                            <span class="text-slate-800 dark:text-slate-200">Git & Version Control</span>
+                            <span class="text-xs text-purple-600 dark:text-purple-400">Proficient</span>
+                        </div>
+                        <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-purple-600 dark:bg-purple-500 h-full rounded-full" style="width: 82%;"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm font-medium mb-1">
+                            <span class="text-slate-800 dark:text-slate-200">Docker & Containerization</span>
+                            <span class="text-xs text-purple-600 dark:text-purple-400">Proficient</span>
+                        </div>
+                        <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-purple-600 dark:bg-purple-500 h-full rounded-full" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm font-medium mb-1">
+                            <span class="text-slate-800 dark:text-slate-200">LaTeX Academic Publishing</span>
+                            <span class="text-xs text-purple-600 dark:text-purple-400">Expert</span>
+                        </div>
+                        <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-purple-600 dark:bg-purple-500 h-full rounded-full" style="width: 92%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex flex-wrap gap-2">
+                    <span class="text-xs px-2.5 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-lg">Kubernetes</span>
+                    <span class="text-xs px-2.5 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-lg">CI/CD Pipelines</span>
+                </div>
+            </div>
+
+            <!-- Card 4: Theoretical & Foundations -->
+            <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition">
+                <div class="flex items-center justify-between mb-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-square-root-variable"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 dark:text-slate-100 text-lg">Foundations</h3>
+                    </div>
+                    <span class="px-2.5 py-1 text-xs font-semibold rounded-full bg-amber-100 dark:bg-amber-900/50 text-amber-800 dark:text-amber-200">Theory</span>
+                </div>
+                <div class="space-y-3 text-sm text-slate-700 dark:text-slate-300">
+                    <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                        <span class="font-medium">Deep Learning Architecture</span>
+                        <i class="fa-solid fa-circle-check text-amber-500"></i>
+                    </div>
+                    <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                        <span class="font-medium">Machine Learning Evaluation</span>
+                        <i class="fa-solid fa-circle-check text-amber-500"></i>
+                    </div>
+                    <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                        <span class="font-medium">Algorithm Design & Analysis</span>
+                        <i class="fa-solid fa-circle-check text-amber-500"></i>
+                    </div>
+                    <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                        <span class="font-medium">Probability & Linear Algebra</span>
+                        <i class="fa-solid fa-circle-check text-amber-500"></i>
+                    </div>
+                </div>
+                <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex flex-wrap gap-2">
+                    <span class="text-xs px-2.5 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-lg">Applied Optimization</span>
+                    <span class="text-xs px-2.5 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-lg">Statistical Modeling</span>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Photo Gallery Section -->
-    <section id="gallery" class="py-20 bg-white border-t border-slate-200">
+    <section id="gallery" class="py-20 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 transition-colors duration-300">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-2xl font-bold text-slate-900 mb-2 flex items-center gap-3">
-                <i class="fa-solid fa-camera-retro text-primary-600"></i> Photo Gallery
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-3">
+                <i class="fa-solid fa-camera-retro text-primary-600 dark:text-primary-400"></i> Photo Gallery
             </h2>
-            <p class="text-slate-600 text-sm mb-10">A glimpse into academic conferences, research environments, and milestones.</p>
+            <p class="text-slate-600 dark:text-slate-400 text-sm mb-10">A glimpse into academic conferences, research environments, and milestones.</p>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <!-- Gallery Item 1 -->
-                <div class="group bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition">
-                    <div class="h-48 bg-slate-200 flex items-center justify-center text-slate-400 font-medium overflow-hidden">
+                <div class="group bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/80 rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition">
+                    <div class="h-48 bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-400 font-medium overflow-hidden">
                         <img src="assets/gallery-1.jpg" alt="RANLP 2025 Conference" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1591115765373-5207764f72e7?auto=format&fit=crop&w=800&q=80';" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
                     <div class="p-4">
-                        <h3 class="font-bold text-slate-900 text-sm">RANLP 2025 Conference</h3>
-                        <p class="text-slate-500 text-xs mt-1">Presenting research findings on transformer-based text correction.</p>
+                        <h3 class="font-bold text-slate-900 dark:text-slate-100 text-sm">RANLP 2025 Conference</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-xs mt-1">Presenting research findings on transformer-based text correction.</p>
                     </div>
                 </div>
 
                 <!-- Gallery Item 2 -->
-                <div class="group bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition">
-                    <div class="h-48 bg-slate-200 flex items-center justify-center text-slate-400 font-medium overflow-hidden">
+                <div class="group bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/80 rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition">
+                    <div class="h-48 bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-400 font-medium overflow-hidden">
                         <img src="assets/gallery-2.jpg" alt="Lab Setup" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=800&q=80';" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
                     <div class="p-4">
-                        <h3 class="font-bold text-slate-900 text-sm">Lab & GPU Cluster Setup</h3>
-                        <p class="text-slate-500 text-xs mt-1">Managing MLOps pipelines and large-scale model training nodes.</p>
+                        <h3 class="font-bold text-slate-900 dark:text-slate-100 text-sm">Lab & GPU Cluster Setup</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-xs mt-1">Managing MLOps pipelines and large-scale model training nodes.</p>
                     </div>
                 </div>
 
                 <!-- Gallery Item 3 -->
-                <div class="group bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition">
-                    <div class="h-48 bg-slate-200 flex items-center justify-center text-slate-400 font-medium overflow-hidden">
+                <div class="group bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/80 rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition">
+                    <div class="h-48 bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-400 font-medium overflow-hidden">
                         <img src="assets/gallery-3.jpg" alt="IASBS Community Work" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=800&q=80';" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
                     <div class="p-4">
-                        <h3 class="font-bold text-slate-900 text-sm">IASBS Community Work</h3>
-                        <p class="text-slate-500 text-xs mt-1">Founding member of the IASBS Music Society and student community events.</p>
+                        <h3 class="font-bold text-slate-900 dark:text-slate-100 text-sm">IASBS Community Work</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-xs mt-1">Founding member of the IASBS Music Society and student community events.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-slate-900 py-10 text-center border-t border-slate-800">
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-10 text-center border-t border-slate-800">
         <div class="max-w-6xl mx-auto px-4">
             <h3 class="text-lg font-bold text-white mb-4">Matin Ebrahimkhani</h3>
             <div class="flex justify-center space-x-6 mb-6">
@@ -350,5 +545,34 @@
         </div>
     </footer>
 
+    <!-- Dark Mode Toggle Script -->
+    <script>
+        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+        const themeToggleBtn = document.getElementById('theme-toggle');
+
+        function updateToggleIcons() {
+            if (document.documentElement.classList.contains('dark')) {
+                themeToggleLightIcon.classList.remove('hidden');
+                themeToggleDarkIcon.classList.add('hidden');
+            } else {
+                themeToggleLightIcon.classList.add('hidden');
+                themeToggleDarkIcon.classList.remove('hidden');
+            }
+        }
+
+        updateToggleIcons();
+
+        themeToggleBtn.addEventListener('click', function() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+            updateToggleIcons();
+        });
+    </script>
 </body>
 </html>
